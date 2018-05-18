@@ -10,12 +10,32 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+            DisplayHeader();
+            // Employer inputing
+            InitialEmployeeName();
 
+        }
+
+        // Welcome the inputter
+        static void WelcomeName()
+        {
+            Console.WriteLine("You must have a name");
+
+        }
+
+        // Welcome overloaded
+        static void WelcomeName(string name)
+        {
+            Console.WriteLine($"Welcome {name}");
+
+        }
+
+        // Logic of the initially adding an employee name
+        static string InitialEmployeeName()
+        {
             string employerNameInputing = "";
 
-            Console.WriteLine("*** Employee Solution ***");
-
-            Console.WriteLine("What is your name?");
+            Console.WriteLine("\nWhat is your name?");
             employerNameInputing = Console.ReadLine();
 
             if (employerNameInputing == string.Empty)
@@ -26,18 +46,23 @@ namespace Practice
             {
                 WelcomeName(employerNameInputing);
             }
+ 
+            return employerNameInputing;
+
         }
 
-        // Welcome the inputter
-        static void WelcomeName()
+        static void SysDateTime()
         {
-            Console.WriteLine("You must have a name");
+            Console.WriteLine("Please note the time: "+DateTime.Now);
+            Console.WriteLine("All access will be logged...\n");
+
         }
 
-        // Welcome overloaded
-        static void WelcomeName(string name)
+        static void DisplayHeader()
         {
-            Console.WriteLine($"Welcome {name}");
+            Console.WriteLine("*************************\n*** Employee Solution ***\n*************************\n");
+            SysDateTime();
+
         }
     }
 }
