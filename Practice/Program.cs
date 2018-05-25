@@ -10,9 +10,10 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+            Employee initialEmp = new Employee();
 
             DisplayHeader();
-            InitialEmployeeName();
+            InitialEmployeeName(initialEmp);
 
         }
 
@@ -32,7 +33,7 @@ namespace Practice
 
         // Logic of the initially adding an employee name
         // Bad design
-        static Employee InitialEmployeeName()
+        static Employee InitialEmployeeName(Employee emp)
         {
             string first_name = "";
             string last_name = "";
@@ -52,11 +53,15 @@ namespace Practice
             if (emp_number == string.Empty)
             {
                 WelcomeEmpNumber();
+
             }
             else
             {
                 WelcomeEmpNumber(emp_number);
+
             }
+
+            myEmp.AnnounceEmployee();
 
             return myEmp;
 
