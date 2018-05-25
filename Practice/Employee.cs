@@ -26,7 +26,13 @@ namespace Practice
 
         public Employee()
         {
-            fname = "no name";
+            fname = " Error! Employee has no name";
+        }
+
+        public virtual void AnnounceEmployee()
+        {
+            Console.WriteLine("Employee name is " + fname + " " + lname);
+
         }
     }
 }

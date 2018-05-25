@@ -10,9 +10,21 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+            // Thinking about design for adding employee
+            string myFirst = "John";
+            string myLast = "Jacob";
+            string myNum = "1234";
+
             DisplayHeader();
-            // Employer inputing
             InitialEmployeeName();
+
+            Employee myEmp = new Employee(myFirst, myLast, myNum);
+
+            myEmp.AnnounceEmployee();
+
+            Guest guest = new Guest();
+
+            guest.PleaseGetEmpNumber();
 
         }
 
@@ -31,6 +43,7 @@ namespace Practice
         }
 
         // Logic of the initially adding an employee name
+        // Bad design
         static string InitialEmployeeName()
         {
             string employerNameInputing = "";
@@ -46,14 +59,14 @@ namespace Practice
             {
                 WelcomeName(employerNameInputing);
             }
- 
+
             return employerNameInputing;
 
         }
 
         static void SysDateTime()
         {
-            Console.WriteLine("Please note the time: "+DateTime.Now);
+            Console.WriteLine("Please note the time: " + DateTime.Now);
             Console.WriteLine("All access will be logged...\n");
 
         }
