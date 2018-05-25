@@ -8,9 +8,11 @@ namespace Practice
 {
     class Employee
     {
+        #region Employee Variables
         private string fname;
         private string lname;
         private string empNumber;
+        #endregion
 
         // Accessing the properties
         protected string Fname { get => fname; set => fname = value; }
@@ -29,10 +31,12 @@ namespace Practice
             fname = " Error! Employee has no name";
         }
 
+        #region Employee Methods
         public virtual void AnnounceEmployee()
         {
             Console.WriteLine("Employee name is " + fname + " " + lname);
 
         }
+        #endregion
     }
 }
