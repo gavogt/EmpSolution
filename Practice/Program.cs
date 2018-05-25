@@ -10,57 +10,55 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            // Thinking about design for adding employee
-            string myFirst = "John";
-            string myLast = "Jacob";
-            string myNum = "1234";
 
             DisplayHeader();
             InitialEmployeeName();
 
-            Employee myEmp = new Employee(myFirst, myLast, myNum);
-
-            myEmp.AnnounceEmployee();
-
-            Guest guest = new Guest();
-
-            guest.PleaseGetEmpNumber();
-
         }
 
         // Welcome the inputter
-        static void WelcomeName()
+        static void WelcomeEmpNumber()
         {
             Console.WriteLine("You must have a name");
 
         }
 
         // Welcome overloaded
-        static void WelcomeName(string name)
+        static void WelcomeEmpNumber(string number)
         {
-            Console.WriteLine($"Welcome {name}");
+            Console.WriteLine($"Welcome {number}");
 
         }
 
         // Logic of the initially adding an employee name
         // Bad design
-        static string InitialEmployeeName()
+        static Employee InitialEmployeeName()
         {
-            string employerNameInputing = "";
+            string first_name = "";
+            string last_name = "";
+            string emp_number = "";
 
-            Console.WriteLine("\nWhat is your name?");
-            employerNameInputing = Console.ReadLine();
+            Console.WriteLine("\nWhat is your first name? ");
+            first_name = Console.ReadLine();
 
-            if (employerNameInputing == string.Empty)
+            Console.WriteLine("What is your last name? ");
+            last_name = Console.ReadLine();
+
+            Console.WriteLine("what is your employee number? ");
+            emp_number = Console.ReadLine();
+
+            Employee myEmp = new Employee(first_name, last_name, emp_number);
+
+            if (emp_number == string.Empty)
             {
-                WelcomeName();
+                WelcomeEmpNumber();
             }
             else
             {
-                WelcomeName(employerNameInputing);
+                WelcomeEmpNumber(emp_number);
             }
 
-            return employerNameInputing;
+            return myEmp;
 
         }
 
